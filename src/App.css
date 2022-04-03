@@ -28,6 +28,83 @@
   color: #61dafb;
 }
 
+.urunlerContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.urunler {
+  border: 1px solid #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 30px;
+  padding: 20px;
+  width: 300px;
+}
+
+.urunler  img{
+  width:300px;
+}
+
+.urunler button {
+  border: 0;
+  width: 150px;
+  height: 50px;
+  background-color: red;
+  color: #fff;
+}
+
+.urunListesi {
+  display: flex;
+  border-bottom: 1px solid #ddd;
+  padding: 20px;
+  margin: 0 20px;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.urunListesi span, .urunListesiHeader span {
+  width: 200px;
+}
+
+.urunListesiHeader {
+  display: flex;
+  background-color: #282c34;
+  color: #fff;
+  padding: 20px;
+  margin: 0 20px;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.Layout {
+  display: flex;
+  background-color: #ff0000;
+  color: #fff;
+  margin-bottom: 50px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+}
+
+.Layout span{
+  width: 100px;
+  border-left: 1px solid #fff;
+  padding: 5px 20px;
+}
+
+.Layout a:first-child span{
+  border-left: 0;
+}
+
+.Layout a {
+  color: #fff;
+  text-decoration: none;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
