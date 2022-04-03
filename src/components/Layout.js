@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useSepet } from "../contexts/sepet";
-import SepetIcon from "../constants/icon/sepetIcon";
+import { SepetIcon } from "../constants/icon";
 
 function Layout ({children}) {
   const { sepetListe } = useSepet();
@@ -23,9 +23,12 @@ function Layout ({children}) {
       <div className="Layout">
         <Link to="/"><span>Ana Sayfa</span></Link> 
         <Link to="/about"><span>Hakkımızda</span></Link> 
-        <Link to="/basket"><span> 
-        <SepetIcon color="#ffffff" size={36} text="Bu bir icondur"/>
-        {urunSayisi} Ürün vardır</span></Link> 
+        <Link to="/basket">
+          <strong> 
+            <SepetIcon color="#fff" size={24}/>
+            <b>{urunSayisi}</b>
+          </strong>
+        </Link> 
 
     
       </div>

@@ -45,16 +45,39 @@
   width: 300px;
 }
 
+.urunler .imageContainer {
+  width: 100%;
+  height: 250px;
+  justify-content: center;
+  align-items: center;
+}
+
 .urunler  img{
-  width:300px;
+  max-width: 300px;
+  max-height: 250px;
 }
 
 .urunler button {
   border: 0;
-  width: 150px;
+  width: 100%;
   height: 50px;
   background-color: red;
   color: #fff;
+}
+
+.urunler span {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 20px;
+  font-size: 26px;
+}
+
+.urunler h2 {
+  display: flex;
+  margin: 10px 0;
+  color: #f00;
+  font-size: 18px;
 }
 
 .urunListesi {
@@ -64,9 +87,22 @@
   margin: 0 20px;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 }
+
 .urunListesi span, .urunListesiHeader span {
   width: 200px;
+}
+.urunListesi button {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  background-color: #f00;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 .urunListesiHeader {
@@ -94,6 +130,29 @@
   width: 100px;
   border-left: 1px solid #fff;
   padding: 5px 20px;
+}
+
+.Layout strong{
+  width: 36px;
+  border-left: 1px solid #fff;
+  padding: 5px 20px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.Layout strong b{
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  background-color: #fff;
+  color: #f00;
+  border-radius: 12px;
+  right: 12px;
+  top: 12px;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
 }
 
 .Layout a:first-child span{

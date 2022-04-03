@@ -1,10 +1,11 @@
 
 import { useEffect, useState } from 'react';
 import '../App.css';
+import { DeleteIcon } from '../constants/icon';
 import { useSepet } from '../contexts/sepet';
 
 function Basket() {
-  const { sepetListe } = useSepet();
+  const { sepetListe, sepettenSil } = useSepet();
   const [toplam, setToplam] = useState(0);
   const [sayi, setSayi] = useState(0);
 
@@ -19,34 +20,48 @@ function Basket() {
 
     setToplam(toplamFiyat);
     setSayi(urunSayisi);
-  }, [sepetListe])
+  }, [sepetListe]);
+
+  const urunSil = item => {
+    sepettenSil(item);
+  }
   
   return (
     <>
-      <div className="urunListesiHeader">
-        <span>Ürün Adı</span>
-        <span>Ürün Adeti</span>
-        <span>Ürün Birim Fiyatı</span>
-        <strong>Ürün toplam Fiyatı</strong>
-      </div>
+    {
+      sepetListe.length > 0 ?
+        <>
+          <div className="urunListesiHeader">
+            <span>Ürün Adı</span>
+            <span>Ürün Adeti</span>
+            <span>Ürün Birim Fiyatı</span>
+            <strong>Ürün toplam Fiyatı</strong>
+          </div>
+          {
+            sepetListe.map((item, index)=> 
+            <div key={index} className="urunListesi">
+              <span>{item.title}</span>
+              <span>{item.count}</span>
+              <span>{item.price}</span>
+              <strong>${(item.price *  item.count).toFixed(2)}</strong>
+              <button onClick={() => urunSil(item)}>
+                <DeleteIcon size={24} color="#fff" />
+              </button>
+            </div>
+            )
+          }
 
-      {
-        sepetListe.map((item, index)=> 
-        <div key={index} className="urunListesi">
-          <span>{item.title}</span>
-          <span>{item.count}</span>
-          <span>{item.price}</span>
-          <strong>${(item.price *  item.count).toFixed(2)}</strong>
-        </div>
-        )
-      }
+          <div className="urunListesi">
+            <span>Toplam</span>
+            <span>{sayi}</span>
+            <span></span>
+            <strong>${toplam.toFixed(2)}</strong>
+          </div>
+        </>
+        :
+        <div className='urunYok'>Sepetinize ekli ürün bulunmamaktadır.</div>
+    }
 
-      <div className="urunListesi">
-        <span>Toplam</span>
-        <span>{sayi}</span>
-        <span></span>
-        <strong>${toplam.toFixed(2)}</strong>
-      </div>
     </>
   );
 }

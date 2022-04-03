@@ -24,9 +24,11 @@ function Home() {
       {
         urunler.map((item, index) => 
           <div key={index} className="urunler">
-            <img src={item.thumbnail} />
-            {item.title}
-            <div>${item.price}</div>
+            <div className='imageContainer'>
+              <img src={item.thumbnail} />
+            </div>
+            <h2>{item.title}</h2>
+            <span>${item.price}</span>
             <button onClick={() => sepeteEkle(item)}>Sepete Ekle</button>
           </div>
         )

@@ -19,11 +19,29 @@ const SepetProvider = ({children}) => {
     setSepetListe(eskiListe);
   }
 
+  const sepettenSil = item => {
+    const eskiListe = [...sepetListe];
+    const index = eskiListe.findIndex(x => x.id === item.id);
+
+    if(index > -1) {
+      if(eskiListe[index].count > 1) {
+        eskiListe[index].count = eskiListe[index].count - 1;
+      }
+      else {
+        eskiListe.splice(index, 1);
+      }
+
+      setSepetListe(eskiListe);
+    }
+
+  }
+
   return (
     <SepetContext.Provider
       value={{
         sepetListe,
-        sepeteEkle
+        sepeteEkle,
+        sepettenSil
       }}
     >
       {children}
