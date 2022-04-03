@@ -29,10 +29,9 @@ function Layout ({children}) {
             <b>{urunSayisi}</b>
           </strong>
         </Link> 
-
-    
       </div>
       {children}
+      <div>Footer</div>
     </>
   );
 }

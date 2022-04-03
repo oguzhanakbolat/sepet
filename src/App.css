@@ -28,6 +28,12 @@
   color: #61dafb;
 }
 
+.urunYok {
+  width: 100%;
+  height: calc(100vh - 100px);
+  display: flex;
+}
+
 .urunlerContainer {
   display: flex;
   flex-direction: row;
@@ -57,12 +63,28 @@
   max-height: 250px;
 }
 
-.urunler button {
-  border: 0;
+.butonGrup {
   width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.butonGrup button {
+  border: 0;
+  width: calc(50% - 20px);
   height: 50px;
   background-color: red;
   color: #fff;
+  cursor: pointer;
+}
+.butonGrup a {
+  border: 0;
+  width: calc(50% - 20px);
+  height: 50px;
+  background-color: red;
+  color: #fff;
+  cursor: pointer;
 }
 
 .urunler span {

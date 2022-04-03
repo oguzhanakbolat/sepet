@@ -12,5 +12,3 @@ const DeleteIcon = props => (
 )
 
 export default DeleteIcon;
-
-
